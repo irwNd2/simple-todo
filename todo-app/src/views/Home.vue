@@ -19,6 +19,10 @@ export default {
 
         addTodo() {
             this.$router.push('/add-todo')
+        },
+
+        updateTodoById(id) {
+            this.$router.push(`/update-todo/${id}`)
         }
     },
     components: {
@@ -56,6 +60,9 @@ export default {
                         <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                             Completed
                         </th>
+                        <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            Deadline
+                        </th>
                         <th class="whitespace-nowrap px-4 py-2 text-center font-medium text-gray-900">
                             Action
                         </th>
@@ -63,8 +70,7 @@ export default {
                 </thead>
 
                 <tbody class="divide-y divide-gray-200">
-                    <TodoRows v-for="todo in todos" :key="todo.id" :todo="todo" :deleteTodo="deleteTodo" />
-                    <!-- <PatientTableRow v-for="patient in patients" :key="patient.id" :patient="patient" /> -->
+                    <TodoRows v-for="todo in todos" :key="todo.id" :todo="todo" :deleteTodo="deleteTodo" :updateTodoById="updateTodoById" />
                 </tbody>
             </table>
         </div>

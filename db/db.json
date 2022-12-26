@@ -1,11 +1,11 @@
 {
   "todos": [
     {
-      "id": 1,
       "title": "Learn React",
       "description": "Learn React and Redux",
-      "completed": false,
-      "deadline": "2022-12-31"
+      "deadline": "2022-12-31",
+      "completed": "true",
+      "id": 1
     },
     {
       "id": 2,

@@ -49,6 +49,7 @@ export const useTodoStore = defineStore("todo", {
         try {
             await axios.put(`http://localhost:3000/todos/${id}`, todo);
             this.todos = this.todos.map((todo) => todo.id === id ? { ...todo, ...todo } : todo);
+            router.push("/");
         } catch (error) {
             console.log(error);
         }
