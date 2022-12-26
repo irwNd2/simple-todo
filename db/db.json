@@ -1,0 +1,46 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React",
+      "description": "Learn React and Redux",
+      "completed": false,
+      "deadline": "2022-12-31"
+    },
+    {
+      "id": 2,
+      "title": "Learn Vue",
+      "description": "Learn Router and Pinia",
+      "completed": true,
+      "deadline": "2022-12-31"
+    },
+    {
+      "id": 3,
+      "title": "Learn Golang",
+      "description": "Learn Golang and Gin",
+      "completed": false,
+      "deadline": "2022-12-31"
+    },
+    {
+      "id": 4,
+      "title": "Learn PHP",
+      "description": "Learn PHP and Laravel",
+      "completed": true,
+      "deadline": "2022-12-31"
+    },
+    {
+      "id": 5,
+      "title": "Learn Phalcon",
+      "description": "Learn Phalcon and Vue",
+      "completed": true,
+      "deadline": "2022-12-31"
+    },
+    {
+      "title": "Doing Technical Test",
+      "description": "Using Golang for backend",
+      "completed": false,
+      "deadline": "2022-12-28",
+      "id": 6
+    }
+  ]
+}
