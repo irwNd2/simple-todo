@@ -4,7 +4,7 @@
       "title": "Learn React",
       "description": "Learn React and Redux",
       "deadline": "2022-12-31",
-      "completed": "true",
+      "completed": "false",
       "id": 1
     },
     {
@@ -15,31 +15,31 @@
       "deadline": "2022-12-31"
     },
     {
-      "id": 3,
       "title": "Learn Golang",
-      "description": "Learn Golang and Gin",
-      "completed": false,
-      "deadline": "2022-12-31"
+      "description": "Golang for backend",
+      "deadline": "2022-12-31",
+      "completed": "false",
+      "id": 3
     },
     {
-      "id": 4,
+      "completed": true,
       "title": "Learn PHP",
       "description": "Learn PHP and Laravel",
-      "completed": true,
-      "deadline": "2022-12-31"
+      "deadline": "2022-12-31",
+      "id": 4
     },
     {
-      "id": 5,
+      "title": "Doing technical test",
+      "description": "Using Golang and its framework",
+      "deadline": "2022-12-29",
+      "completed": "false",
+      "id": 5
+    },
+    {
       "title": "Learn Phalcon",
-      "description": "Learn Phalcon and Vue",
-      "completed": true,
-      "deadline": "2022-12-31"
-    },
-    {
-      "title": "Doing Technical Test",
-      "description": "Using Golang for backend",
-      "completed": false,
+      "description": "Using it to create REST API",
       "deadline": "2022-12-28",
+      "completed": true,
       "id": 6
     }
   ]

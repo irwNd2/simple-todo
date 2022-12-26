@@ -11,7 +11,7 @@ export default {
         ...mapState(useTodoStore, ['todos'])
     },
     methods: {
-        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById']),
+        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById', 'completeTodoHandler']),
 
         deleteTodo(id) {
             this.deleteTodoById(id)
@@ -70,7 +70,7 @@ export default {
                 </thead>
 
                 <tbody class="divide-y divide-gray-200">
-                    <TodoRows v-for="todo in todos" :key="todo.id" :todo="todo" :deleteTodo="deleteTodo" :updateTodoById="updateTodoById" />
+                    <TodoRows v-for="todo in todos" :key="todo.id" :todo="todo" :deleteTodo="deleteTodo" :updateTodoById="updateTodoById" :completeTodoHandler="completeTodoHandler"/>
                 </tbody>
             </table>
         </div>
