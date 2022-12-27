@@ -73,5 +73,73 @@ export const useTodoStore = defineStore("todo", {
         console.log(error);
       }
     },
+
+    async searchByTitle(title) {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+
+        this.todos = data.filter((todo) =>
+          todo.title.toLowerCase().includes(title.toLowerCase())
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async filterByCompleted() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+
+        this.todos = data.filter((todo) => todo.completed === true);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async filterByUncompleted() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+
+        this.todos = data.filter(
+          (todo) => todo.completed === false || todo.completed === "false"
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async sortByTitleAsc() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+        this.todos = data.sort((a, b) => {
+          if (a.title < b.title) {
+            return -1;
+          }
+          if (a.title > b.title) {
+            return 1;
+          }
+          return 0;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async sortByTitleDesc() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+        this.todos = data.sort((a, b) => {
+          if (a.title > b.title) {
+            return -1;
+          }
+          if (a.title < b.title) {
+            return 1;
+          }
+          return 0;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });

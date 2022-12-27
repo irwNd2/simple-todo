@@ -87,8 +87,8 @@ export default {
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
                             v-model="this.todo.completed">
                             <option selected disabled>Select Option</option>
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
+                            <option value='true'>Yes</option>
+                            <option value='false'>No</option>
                         </select>
 
                     </div>
