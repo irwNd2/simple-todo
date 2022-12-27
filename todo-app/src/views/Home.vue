@@ -77,7 +77,7 @@ export default {
                     class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                     placeholder="Search by title" v-model="search" @keyup.enter="searchTodoByTitle">
                 <button
-                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    class="inline-block px-6 py-2 border-2 border-cyan-600 text-cyan-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     @click.prevent="searchTodoByTitle">Search</button>
             </span>
             <span>
@@ -85,19 +85,19 @@ export default {
             </span>
             <span>
                 <button
-                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    class="inline-block px-6 py-2 border-2 border-indigo-600 text-indigo-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     @click.prevent="filterByCompletedButton">Completed</button>
                 <button
-                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    class="inline-block px-6 py-2 border-2 border-indigo-800 text-indigo-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     @click.prevent="filterByUncompletedButton">Uncompleted</button>
             </span>
             <span>
                 <p class="text-l font-bold">Sort By Title</p>
                 <button
-                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    class="inline-block px-6 py-2 border-2 border-rose-400 text-rose-400 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     @click.prevent="sortByTitleAscButton">ASC</button>
                 <button
-                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    class="inline-block px-6 py-2 border-2 border-rose-700 text-rose-700 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     @click.prevent="sortByTitleDescButton">DESC</button>
             </span>
         </div>
