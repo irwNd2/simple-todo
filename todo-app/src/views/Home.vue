@@ -4,14 +4,20 @@ import { useTodoStore } from '../stores/todo'
 import TodoRows from "../components/TodoRows.vue";
 
 export default {
+    data() {
+        return {
+            search: ''
+        }
+    },
     created() {
-        this.fetchTodos()
+        this.fetchTodos(),
+        this.searchByTitle('')
     },
     computed: {
         ...mapState(useTodoStore, ['todos'])
     },
     methods: {
-        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById', 'completeTodoHandler']),
+        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById', 'completeTodoHandler', 'searchByTitle']),
 
         deleteTodo(id) {
             this.deleteTodoById(id)
@@ -23,6 +29,10 @@ export default {
 
         updateTodoById(id) {
             this.$router.push(`/update-todo/${id}`)
+        },
+
+        searchTodoByTitle() {
+            this.searchByTitle(this.search)
         }
     },
     components: {
@@ -43,6 +53,12 @@ export default {
             <h3 class="text-xl font-bold">Table of TODO List</h3>
             <button class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" @click.prevent="addTodo">Add Todo</button>
         </div>
+
+        <div class="px-4 py-4">
+            <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Search by title" v-model="search" @keyup.enter="searchTodoByTitle">
+            <button class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" @click.prevent="searchTodoByTitle">Search</button>
+        </div>
+
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 text-sm">
                 <thead class="bg-gray-100">
@@ -62,6 +78,9 @@ export default {
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                             Deadline
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            Mark as Completed
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 text-center font-medium text-gray-900">
                             Action

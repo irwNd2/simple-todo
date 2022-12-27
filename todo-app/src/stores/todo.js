@@ -73,5 +73,16 @@ export const useTodoStore = defineStore("todo", {
         console.log(error);
       }
     },
+
+    async searchByTitle(title) {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:3000/todos`
+        );
+        this.todos = data.filter((todo) => todo.title.includes(title));
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });
