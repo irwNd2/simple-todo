@@ -17,7 +17,7 @@ export default {
         ...mapState(useTodoStore, ['todos'])
     },
     methods: {
-        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById', 'completeTodoHandler', 'searchByTitle', 'filterByCompleted', 'filterByUncompleted']),
+        ...mapActions(useTodoStore, ['fetchTodos', 'deleteTodoById', 'completeTodoHandler', 'searchByTitle', 'filterByCompleted', 'filterByUncompleted', 'sortByTitleAsc', 'sortByTitleDesc']),
 
         deleteTodo(id) {
             this.deleteTodoById(id)
@@ -42,6 +42,13 @@ export default {
         filterByUncompletedButton() {
             this.filterByUncompleted()
         },
+        sortByTitleAscButton() {
+            this.sortByTitleAsc()
+        },
+
+        sortByTitleDescButton() {
+            this.sortByTitleDesc()
+        }
     },
     components: {
         TodoRows
@@ -85,7 +92,13 @@ export default {
                     @click.prevent="filterByUncompletedButton">Uncompleted</button>
             </span>
             <span>
-
+                <p class="text-l font-bold">Sort By Title</p>
+                <button
+                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    @click.prevent="sortByTitleAscButton">ASC</button>
+                <button
+                    class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    @click.prevent="sortByTitleDescButton">DESC</button>
             </span>
         </div>
 
