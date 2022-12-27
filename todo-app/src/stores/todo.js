@@ -79,7 +79,8 @@ export const useTodoStore = defineStore("todo", {
         const { data } = await axios.get(
           `http://localhost:3000/todos`
         );
-        this.todos = data.filter((todo) => todo.title.includes(title));
+
+        this.todos = data.filter((todo) => todo.title.toLowerCase().includes(title.toLowerCase()));
       } catch (error) {
         console.log(error);
       }
