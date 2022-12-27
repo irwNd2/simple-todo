@@ -76,11 +76,31 @@ export const useTodoStore = defineStore("todo", {
 
     async searchByTitle(title) {
       try {
-        const { data } = await axios.get(
-          `http://localhost:3000/todos`
-        );
+        const { data } = await axios.get(`http://localhost:3000/todos`);
 
-        this.todos = data.filter((todo) => todo.title.toLowerCase().includes(title.toLowerCase()));
+        this.todos = data.filter((todo) =>
+          todo.title.toLowerCase().includes(title.toLowerCase())
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async filterByCompleted() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+
+        this.todos = data.filter((todo) => todo.completed === true);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async filterByUncompleted() {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/todos`);
+
+        this.todos = data.filter((todo) => todo.completed === false || todo.completed === 'false');
       } catch (error) {
         console.log(error);
       }
